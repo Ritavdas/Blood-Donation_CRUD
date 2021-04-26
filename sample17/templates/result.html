@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Result</title>
+  </head>
+  <body>
+    <h1>{{msg}}</h1>
+    {% if obj %}
+    <h3>{{obj.name}}</h3>
+    <h3>{{obj.address}}</h3>
+    <h3>{{obj.age}}</h3>
+    <h3>{{obj.dob}}</h3>
+    <img src="{{obj.pic.url}}" alt="" width="500" />
+    <h3>Gender : {{obj.gender}}</h3>
+    <h3>Group : {{obj.group}}</h3>
+    {% if obj.total %}
+    <h3>He has many donations</h3>
+    {% else %}
+    <h3>He has average donations</h3>
+    {% endif %}
+    <h3>{{obj.amount}}</h3>
+    {% endif %} {% if obj.car %}
+    <h3>Car</h3>
+    {% endif %} {% if obj.bike %}
+    <h3>bike</h3>
+    {% endif %} {% if obj.boat %}
+    <h3>boat</h3>
+    {% endif %}
+  </body>
+</html>
