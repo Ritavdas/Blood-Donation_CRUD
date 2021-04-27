@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  {% load static %}
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script>
+      var loadFile = function (event) {
+        var image = document.getElementById("output");
+        image.src = URL.createObjectURL(event.target.files[0]);
+      };
+    </script>
+    <style>
+      body {
+        font: 15px/1.4 Verdana, Arial;
+        background: #eee;
+        height: 100%;
+        margin: 25px 10px;
+        padding: 0;
+      }
+    </style>
+    <title>Form</title>
+  </head>
+  <body>
+    <h1>Blood Donation Form</h1>
+    <hr />
+
+    <form action="emp" method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div
+        style="height: 100px; display: flex; align-items: center; height: 100%"
+      >
+        <pre>Id   <input type="number" name="t1" /><br /><br /></pre>
+      </div>
+      <hr />
+      <div
+        style="height: 100px; display: flex; align-items: center; height: 100%"
+      >
+        <pre>Name  <input type="text" name="t2" /><br /><br /></pre>
+      </div>
+      <hr />
+
+      <div style="display: flex; align-items: center; height: 100%">
+        <pre>Address
+
+        <textarea type="text" name="t3" cols="30" rows="10"></textarea>
+      </pre>
+      </div>
+      <hr />
+      <div
+        style="height: 100px; display: flex; align-items: center; height: 100%"
+      >
+        <pre>Contact number: <input type="number" name="t4" /><br />
+        </pre>
+      </div>
+      <hr />
+
+      <!-- Radio button -->
+      <div>Date of Birth: <input type="date" name="dob" id="dob" /></div>
+      <br />
+      <hr />
+
+      <div>
+        <p>Please select your gender:</p>
+        <input type="radio" id="male" name="gender" value="male" />
+        <label for="male">Male</label><br />
+        <input type="radio" id="female" name="gender" value="female" />
+        <label for="female">Female</label><br />
+        <input type="radio" id="other" name="gender" value="other" />
+        <label for="other">Other</label>
+        <br /><br />
+        <hr />
+      </div>
+      <div>
+        Weight(kg):
+        <input type="number" step="any" name="weight" id="" />
+      </div>
+      <br />
+      <hr />
+      <div>
+        <p>How many times have you donated before?</p>
+        <input type="radio" id="less" name="donations" value="False" />
+        <label for="lesser">Less than or equal to 5</label><br />
+        <input type="radio" id="less" name="donations" value="True" />
+        <label for="lesser">More than 5</label><br />
+      </div>
+      <br />
+      <hr />
+
+      <div>
+        <label for="group">Blood group:</label>
+
+        <select name="group" id="group">
+          <option value="A+">A+</option>
+          <option value="A-">A-</option>
+          <option value="B+">B+</option>
+          <option value="B-">B-</option>
+          <option value="O+">O+</option>
+          <option value="O-">O-</option>
+          <option value="AB+">AB+</option>
+          <option value="AB-">AB-</option>
+        </select>
+      </div>
+      <br />
+      <hr />
+
+      <div>
+        <p></p>
+        <label for="target"
+          >Did you ever find any problems in your last donation?(you may skip if
+          this is your first donation)</label
+        ><br />
+        <input type="checkbox" id="target1" name="fainting" value="True" />
+        <label for="diff1">Fainting</label><br />
+        <input type="checkbox" id="target2" name="bruise" value="True" />
+        <label for="diff2">Bruise</label><br />
+        <input type="checkbox" id="target3" name="vein" value="True" />
+        <label for="diff3">Difficulty in finding vein</label><br />
+      </div>
+      <br />
+      <div>
+        <hr />
+
+        <label for="img">Upload ID proof:</label>
+        <input
+          type="file"
+          name="picture"
+          accept="image/*"
+          id="file"
+          onchange="loadFile(event)"
+        />
+        <p><img id="output" width="500" /></p>
+        <hr />
+      </div>
+      <br />
+      <div>
+        <input type="submit" value="Insert" name="b1" />
+        <input type="submit" value="Select" name="b1" />
+        <input type="submit" value="Update" name="b1" />
+        <input type="submit" value="Delete" name="b1" />
+      </div>
+    </form>
+  </body>
+</html>
