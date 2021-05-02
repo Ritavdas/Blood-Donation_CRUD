@@ -59,6 +59,7 @@ class EmpView(TemplateView):
             gender = request.POST["gender"]
             group = request.POST["group"]
             dob = request.POST["dob"]
+            total = request.POST["donations"]
             pic = (request.FILES["picture"])
             weight = request.POST["weight"]
 
@@ -83,6 +84,7 @@ class EmpView(TemplateView):
             obj.group = group
             obj.dob = dob
             obj.pic = pic
+            obj.total = total
             obj.fainting = fainting
             obj.bruise = bruise
             obj.vein = vein
