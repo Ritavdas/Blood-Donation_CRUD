@@ -4,9 +4,10 @@ import datetime
 
 
 class Donors(models.Model):
+    id = models.IntegerField(primary_key=True)
     name = models.CharField(max_length=30)
     address = models.TextField(max_length=1000)
-    contact_number = models.IntegerField()
+    zipcode = models.IntegerField()
     gender = models.CharField(max_length=10)
     group = models.CharField(max_length=20)
     weight = models.FloatField()

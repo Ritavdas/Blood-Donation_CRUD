@@ -1,8 +1,8 @@
 from django.contrib import admin
 from django.urls import path
-from . import views
+from crud.views import IndexView, EmpView
 
 urlpatterns = [
-    path('', views.index),
-    path('emp', views.emp)
+    path('', IndexView.as_view()),
+    path('emp', EmpView.as_view(),)
 ]

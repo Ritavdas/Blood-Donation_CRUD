@@ -20,7 +20,7 @@
     {% if obj %}
     <h3>Name : {{obj.name}}</h3>
     <h3>Address : {{obj.address}}</h3>
-    <h3>Contact Number: {{obj.age}}</h3>
+    <h3>Zip Code: {{obj.zipcode}}</h3>
     <h3>Date of Birth: {{obj.dob}}</h3>
     <h3>ID proof</h3>
     <img src="{{obj.pic.url}}" alt="" width="500" />
@@ -34,17 +34,14 @@
     <h3>Weight: {{obj.weight}}</h3>
     {% if obj.fainting or obj.bruise or obj.vein %}
     <h3>Problems in your last donation:</h3>
-    {% endif %} {% if obj.fainting %}
+    {% endif %}
     <ul>
+      {% if obj.fainting %}
       <li><h3>Fainting</h3></li>
       {% endif %} {% if obj.bruise %}
-      <li>
-        <h3>bruise</h3>
-      </li>
+      <li><h3>bruise</h3></li>
       {% endif %} {% if obj.vein %}
-      <li>
-        <h3>vein</h3>
-      </li>
+      <li><h3>vein</h3></li>
       {% endif %}
     </ul>
 
